@@ -533,6 +533,20 @@ def bch2(x,y,ta,m):
 #C++ code is written which calculates the bch of elements which each have components in every lyndon word. 
 #NOTE the user control area
 
+#parseCmdLine("38,2") => [38,2]
+#parseCmdLine("38") => [38]
+#parseCmdLine("2-4,23") => [2,3,4,23]
+def parseCmdLine(a):
+    out=set()
+    for aa in string.split(a,","):
+        aaa=string.split(aa,"-")
+        if len(aaa)==1:
+            out.add(int(aaa[0]))
+        else:
+            for i in range(int(aaa[0]),int(aaa[1])+1):
+                out.add(i)
+    return sorted([s for s in out])
+
 tempIndex=0 # this should be inside outputCode, but there is no nonlocal declaration until python 3
 def outputCode():
     file=None
@@ -608,8 +622,8 @@ def outputCode():
     dimensionsToDo=[2]
     levelsToDo=[1,2,3,4,6]#range(1,10)
     if len(sys.argv)==3:
-        dimensionsToDo=[int(sys.argv[1])]
-        levelsToDo=[int(sys.argv[2])]
+        dimensionsToDo=parseCmdLine(sys.argv[1])
+        levelsToDo=parseCmdLine(sys.argv[2])
     levelsDimensionsToDo=[(m,d) for d in dimensionsToDo for m in levelsToDo]
     doFloat=False #separate function using floats instead of doubles. In fact, floats are usually good enough
     #functionsToDo=frozenset([1,2,3,4,5])
