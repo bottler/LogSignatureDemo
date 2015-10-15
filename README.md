@@ -16,9 +16,9 @@ g++ --std=c++11 -DDIM=3 -DLEVEL=6 bch.cpp calculate.cpp
 
 To generate the BCH code for 2 and 3 dimensions for levels 2 through 7:
 
-'''
+```
 python logsignature.py 2,3 2-7
-'''
+```
 
 Note that running the python script (which generates the files `bch.h` and `bch.cpp`) and compiling the code will in general be slow, but the final program should be fast. The generated code file will in general be large, as will its associated object file if you generate it. The compiling can be quicker with clang++ than g++. 
 
