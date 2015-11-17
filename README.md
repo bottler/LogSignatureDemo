@@ -5,7 +5,7 @@ This is an example of calculating the log signature of a path using the method d
 The file `logsignature.py` is the same as the original distribution on [Jeremy's website](http://www2.warwick.ac.uk/fac/cross_fac/complexity/people/students/dtc/students2013/reizenstein) except you can use command-line arguments to specify the dimensions (D) and levels (M). Each argument is a comma separated list of ranges or values.
 
 ###Usage
-
+First save [this file from Casas and Murua](http://www.ehu.eus/ccwmuura/research/bchLyndon20.dat) to this directory.
 To output the log signature of a random path in 3D up to level 6:
 
 ```

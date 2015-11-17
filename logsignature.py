@@ -471,8 +471,10 @@ def readbchcoords(sourcefile):
     ta[:,4]=0
     return ta
 
-if os.name=="nt":
-    default_directory_for_bch_data="C:/play/MachineLearning"
+if len(sys.argv)==3:
+    default_directory_for_bch_data=""
+elif os.name=="nt":
+    default_directory_for_bch_data="C:/play/MachineLearning/"
 else:
     default_directory_for_bch_data="/storage/maths/phrnai/libs/"
 directory_for_bch_data=default_directory_for_bch_data #USER CONTROL
